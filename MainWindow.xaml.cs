@@ -59,6 +59,7 @@ namespace RadioApplication
             radio.PowerOff();
             RadioState.Text = $"{radio.PowerOff()}";
             Player.Stop();
+            RadioStation.Text = "FM Radio";
             radio.Write(); //SERIALIZE
         }
 
