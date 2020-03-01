@@ -5,18 +5,102 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RadioApplication"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800"
+        Title="Radio Player" Height="550" Width="900"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
         TextElement.FontSize="13"
         TextOptions.TextFormattingMode="Ideal"
         TextOptions.TextRenderingMode="Auto"
-        Background="{DynamicResource MaterialDesignPaper}"
-        FontFamily="{DynamicResource MaterialDesignFont}">
-    <materialDesign:Card Padding="32" Margin="16">
-        <TextBlock Style="{DynamicResource MaterialDesignHeadline4TextBlock}">
-            My First Material Design Application
-        </TextBlock>
+        Background="{x:Null}"
+        FontFamily="{DynamicResource MaterialDesignFont}" ResizeMode="NoResize" AllowsTransparency="True" WindowStyle="None">
+    <materialDesign:Card VerticalAlignment="Stretch" UniformCornerRadius="15">
+        <Grid Height="550">
+            <materialDesign:Card UniformCornerRadius="10" Margin="64,-12,371,312" RenderTransformOrigin="0.5,0.5" Height="250" Width="465">
+                <materialDesign:Card.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-8.704"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </materialDesign:Card.RenderTransform>
+                <materialDesign:Card.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFC9D132"/>
+                        <GradientStop Color="#FFD48614" Offset="1"/>
+                        <GradientStop Color="#FFD8CA6E"/>
+                    </LinearGradientBrush>
+                </materialDesign:Card.Background>
+
+            </materialDesign:Card>
+            <materialDesign:Card UniformCornerRadius="10" Margin="404,-30,30,330" RenderTransformOrigin="0.5,0.5" Width="465" Height="250">
+                <materialDesign:Card.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="13.21"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </materialDesign:Card.RenderTransform>
+                <materialDesign:Card.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFC9D132" Offset="0.095"/>
+                        <GradientStop Color="#FF2B8F2B" Offset="0.652"/>
+                        <GradientStop Color="#FFE6CA17" Offset="0.25"/>
+                    </LinearGradientBrush>
+                </materialDesign:Card.Background>
+
+            </materialDesign:Card>
+            <!--PLAYER WINDOW-->
+            <materialDesign:Card UniformCornerRadius="10" Height="350" Width="415" Margin="56,140,429,60" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <materialDesign:Card.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-0.147"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </materialDesign:Card.RenderTransform>
+                <materialDesign:Card.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <LinearGradientBrush.RelativeTransform>
+                            <TransformGroup>
+                                <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                                <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                                <RotateTransform Angle="-40" CenterY="0.5" CenterX="0.5"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </LinearGradientBrush.RelativeTransform>
+                        <GradientStop Color="#FF9849AA" Offset="0"/>
+                        <GradientStop Color="#FFCB1717" Offset="1"/>
+                    </LinearGradientBrush>
+                </materialDesign:Card.Background>
+                <Grid Margin="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="4*"/>
+                        <RowDefinition Height="2*"/>
+                    </Grid.RowDefinitions>
+                    <materialDesign:PackIcon Grid.Row="0" Kind="Power" Height="40" Width="37" Foreground="#DDFFFFFF" Margin="0,2,0,0"/>
+                    <StackPanel Grid.Row="1" Orientation="Vertical">
+                        <Ellipse Height="130" Width="130" Fill="#FFDED976" materialDesign:ShadowAssist.ShadowDepth="Depth3" Margin="125,0"/>
+                        <TextBlock Text="Radio Channel" FontSize="20" Margin="10,20,10,0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="130" Height="20"/>
+                    </StackPanel>
+                    <StackPanel Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Right" VerticalAlignment="Stretch">
+                        <Slider Orientation="Vertical"
+                                Height="140"
+                                Style="{StaticResource MaterialDesignSlider}"
+                                Maximum="100" Minimum="0" Value="50" Margin="0,0,7,0" HorizontalAlignment="Right"/>
+                    </StackPanel>
+                    <materialDesign:PackIcon Kind="Audio" Width="18" Height="18" Margin="370,147,0,0" HorizontalAlignment="Left" Grid.Row="1" Foreground="#DDFFFFFF"/>
+                    <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Center">
+                        <materialDesign:PackIcon Kind="SkipPrevious" Width="36" Height="36" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="#DDFFFFFF"/>
+                        <materialDesign:PackIcon Kind="PlayCircleFilled" Width="56" Height="56" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="15,0" Foreground="#DDFFFFFF"/>
+                        <materialDesign:PackIcon Kind="SkipNext" Width="36" Height="36" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="#DDFFFFFF"/>
+                    </StackPanel>
+                </Grid>
+            </materialDesign:Card>
+        </Grid>
     </materialDesign:Card>
 </Window>
