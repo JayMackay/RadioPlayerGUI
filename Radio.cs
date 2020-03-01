@@ -14,16 +14,13 @@ namespace RadioApplication
         //FIELDS
         private int _channel = 1;
         private bool _on = false;
-        private double _volume = 50;
+        private double _volume = 25;
+        private string path = @"C:\Users\Jarvis\Desktop\RadioApplication\RadioStateConfig\RadioState.json";
 
         //CHANNEL PROPERTY
         public int Channel
         {
-            get
-            {
-                return _channel;
-            }
-
+            get { return _channel; }
             set
             {
                 if (value <= 4 && value > 0 && _on == true)
@@ -33,48 +30,96 @@ namespace RadioApplication
             }
         }
 
+        //RADIO ON PROPERTY
+        public bool on
+        {
+            get { return _on; }
+            set { on = _on; }
+        }
+
+        //POWER ON METHOD
+        public string PowerOn()
+        {
+            _on = true;
+            return "Radio is on";
+        }
+
+        //POWER OFF METHOD
+        public string PowerOff()
+        {
+            _on = false;
+            return "Radio is off";
+        }
+
         //VOLUME PROPERTY
         public double Volume
         {
             get { return _volume; }
             set
             {
-                if (value >= 0 && value <= 100 && _on == true)
+                if(value >= 0 && value <= 50 && _on == true)
                 {
                     _volume = value;
                 }
             }
         }
 
-        //POWER ON METHOD
-        public void TurnOn()
+        //READ CHANNEL METHOD FOR SERIALIZATION 
+        public int readChannel
         {
-            _on = true;
-            //return "Radio is on";
+            get { return _channel; }
+            set
+            {
+                if(value <= 4 && value > 0)
+                {
+                    _channel = value;
+                }
+
+            }
         }
 
-        //POWER OFF METHOD
-        public string TurnOff()
+        //READ VOLUME METHOD FOR SERIALIZATION
+        public double readVolume
         {
-            _on = false;
-            return "Radio is off";
+            get { return _volume; }
+            set
+            {
+                if(value >= 0 && value <= 50)
+                {
+                    _volume = value;
+                }
+            }
         }
 
-
-        //PLAY CHANNEL METHOD
+        //PLAY METHOD
         public string Play()
         {
             int channelNumber = _channel;
 
-            if (_on == true)
+            if(_on == true)
             {
-                return $"Playing channel {channelNumber}";
+                return $"Radio is on & playing on channel {channelNumber}";
+            }
+            else
+            {
+                return "Please turn on the radio to play music";
+            }
+
+        }
+
+        //STOP METHOD
+        public string Stop()
+        {
+            int channelNumber = _channel;
+
+            if(_on == true)
+            {
+                return $"Radio is currently paused on channel {channelNumber}";
             }
             else
             {
                 return "Radio is off";
             }
-
         }
 
         //VOLUME CONTROL
@@ -83,23 +128,23 @@ namespace RadioApplication
             return _volume;
         }
 
-
-        /*//SERIALIZE
+        //SERIALIZATION
         public void Write()
         {
             _channel = Channel;
             _volume = Volume;
 
-            string output = JsonConvert.SerializeObject(this);
-            File.WriteAllText(path, output);
+            string jsonFileOutput = JsonConvert.SerializeObject(this);
+            File.WriteAllText(path, jsonFileOutput);
         }
 
-        //DESERIALIZE
+        //DESERIALIZATION
         public void Read()
         {
-            string jsonfile = File.ReadAllText(path);
-            var info = JsonConvert.DeserializeObject<Radio>(jsonfile);
-
-        }*/
+            string filePath = File.ReadAllText(path);
+            Radio radio = JsonConvert.DeserializeObject<Radio>(filePath);
+            Channel = radio.readChannel;
+            Volume = radio.readVolume;
+        }
     }
 }

@@ -55,15 +55,42 @@ namespace RadioApplication
             }
         }
 
-        //RADIO PLAYER FUNCTIONALITY
+        //======================RADIO PLAYER FUNCTIONALITY======================
+
+        //POWER ON
+        private void PowerOnButton_Click(object sender, RoutedEventArgs e)
+        {
+            radio.PowerOn();
+            RadioState.Text = $"{radio.PowerOn()}";
+            radio.Read();
+        }
+
+        //POWER OFF
+        private void PowerOffButton_Click(object sender, RoutedEventArgs e)
+        {
+            radio.PowerOff();
+            RadioState.Text = $"{radio.PowerOff()}";
+            Player.Stop();
+            radio.Write(); //SERIALIZE
+        }
+
         private void PlayButton_Click(object sender, RoutedEventArgs e)
         {
+            radio.Play();
+            RadioState.Text = $"{radio.Play()}";
+            if (radio.on == true)
+            {
+                Player.Source = new Uri("http://bbcmedia.ic.llnwd.net/stream/bbcmedia_radio1_mf_p", UriKind.RelativeOrAbsolute);
+                Player.Play();
+                RadioStation.Text = "BBC Radio One";
+            }
 
         }
 
         private void StopButton_Click(object sender, RoutedEventArgs e)
         {
-
+            Player.Stop();
+            RadioState.Text = $"{radio.Stop()}";
         }
 
         //CHANELL BUTTON FUNCTIONALITY
@@ -71,29 +98,53 @@ namespace RadioApplication
         //BBC Radio One
         private void ChannelOne_Click(object sender, RoutedEventArgs e)
         {
-            Player.Source = new Uri("http://bbcmedia.ic.llnwd.net/stream/bbcmedia_radio1_mf_p", UriKind.RelativeOrAbsolute);
-            Player.Play();
+            radio.Channel = 1;
+            RadioState.Text = $"{radio.Play()}";
+            if(radio.on == true)
+            {
+                Player.Source = new Uri("http://bbcmedia.ic.llnwd.net/stream/bbcmedia_radio1_mf_p", UriKind.RelativeOrAbsolute);
+                Player.Play();
+                RadioStation.Text = "BBC Radio One";
+            }
         }
 
         //BBC Radio Two
         private void ChannelTwo_Click(object sender, RoutedEventArgs e)
         {
-            Player.Source = new Uri("http://bbcmedia.ic.llnwd.net/stream/bbcmedia_radio2_mf_p", UriKind.RelativeOrAbsolute);
-            Player.Play();
+            radio.Channel = 2;
+            RadioState.Text = $"{radio.Play()}";
+            if (radio.on == true)
+            {
+                Player.Source = new Uri("http://bbcmedia.ic.llnwd.net/stream/bbcmedia_radio2_mf_p", UriKind.RelativeOrAbsolute);
+                Player.Play();
+                RadioStation.Text = "BBC Radio Two";
+            }
         }
 
         //BBC Radio Three
         private void ChannelThree_Click(object sender, RoutedEventArgs e)
         {
-            Player.Source = new Uri("http://bbcmedia.ic.llnwd.net/stream/bbcmedia_radio3_mf_p", UriKind.RelativeOrAbsolute);
-            Player.Play();
+            radio.Channel = 3;
+            RadioState.Text = $"{radio.Play()}";
+            if (radio.on == true)
+            {
+                Player.Source = new Uri("http://bbcmedia.ic.llnwd.net/stream/bbcmedia_radio3_mf_p", UriKind.RelativeOrAbsolute);
+                Player.Play();
+                RadioStation.Text = "BBC Radio Three";
+            }
         }
 
         //BBC Radio Four    
         private void ChannelFour_Click(object sender, RoutedEventArgs e)
         {
-            Player.Source = new Uri("http://bbcmedia.ic.llnwd.net/stream/bbcmedia_radio4fm_mf_p", UriKind.RelativeOrAbsolute);
-            Player.Play();
+            radio.Channel = 4;
+            RadioState.Text = $"{radio.Play()}";
+            if (radio.on == true)
+            {
+                Player.Source = new Uri("http://bbcmedia.ic.llnwd.net/stream/bbcmedia_radio4fm_mf_p", UriKind.RelativeOrAbsolute);
+                Player.Play();
+                RadioStation.Text = "BBC Radio Four";
+            }
         }
     }
 }

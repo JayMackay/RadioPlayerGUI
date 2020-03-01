@@ -66,7 +66,7 @@
             </materialDesign:TransitioningContent>
             <!--PLAYER WINDOW-->
             <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect Duration=0:0:1, Kind=ExpandIn}">
-                <materialDesign:Card UniformCornerRadius="10" Height="350" Width="415" Margin="93,120,392,80" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <materialDesign:Card UniformCornerRadius="10" Height="350" Width="415" Margin="64,130,421,70" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center" VerticalAlignment="Center">
                     <materialDesign:Card.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>
@@ -95,68 +95,93 @@
                             <RowDefinition Height="4*"/>
                             <RowDefinition Height="2*"/>
                         </Grid.RowDefinitions>
-                        <!--POWER BUTTON-->
-                        <Button x:Name="PoweButton" 
-                        Margin="-17,0,0,20" 
-                        Cursor="Hand" 
-                        Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}"
-                        HorizontalAlignment="Left" VerticalAlignment="Stretch"
-                        Height="Auto" Width="62"
-                        Click="PowerButton_Click">
-                            <materialDesign:PackIcon Kind="Power" HorizontalAlignment="Right" VerticalAlignment="Center" Height="30" Width="30" Foreground="#DDFFFFFF" Cursor="Hand"/>
+                        <!--POWER ON BUTTON-->
+                        <Button x:Name="PoweOnButton" 
+                            Margin="-3,-31,0,190" 
+                            Cursor="Hand" 
+                            Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}"
+                            HorizontalAlignment="Left"
+                            Height="30" Width="30"
+                            Click="PowerOnButton_Click" Grid.RowSpan="2">
+                            <materialDesign:PackIcon Kind="Power" HorizontalAlignment="Right" VerticalAlignment="Center" Height="30" Width="30" Foreground="#DD3D802A" Cursor="Hand" Margin="-18,-1,-14,0"/>
                         </Button>
+                        <!--POWER OFF BUTTON-->
+                        <Button x:Name="PoweOffButton" 
+                            Margin="-3,17,0,185" 
+                            Cursor="Hand" 
+                            Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}"
+                            HorizontalAlignment="Left"
+                            Height="30" Width="30"
+                            Click="PowerOffButton_Click" Grid.RowSpan="2">
+                            <materialDesign:PackIcon Kind="PowerOff" HorizontalAlignment="Right" VerticalAlignment="Center" Height="30" Width="30" Foreground="#DDF04444" Cursor="Hand" Margin="-16,-1,-14,-1"/>
+                        </Button>
+                        <TextBox x:Name="RadioState" 
+                            HorizontalAlignment="Left" 
+                            Height="20" Margin="35,10,0,2" 
+                            TextWrapping="Wrap" 
+                            Text="Radio is off"
+                            Style="{StaticResource MaterialDesignComboBoxEditableTextBox}"
+                            FontSize="15" FontFamily="Candara" FontWeight="Normal" Foreground="#DDFFFFFF"
+                            VerticalAlignment="Top" 
+                            Width="331" 
+                            CaretBrush="{x:Null}" SelectionBrush="{x:Null}"/>
                         <StackPanel Grid.Row="1" Orientation="Vertical">
-                            <Rectangle RadiusX="40" RadiusY="60" Height="81" materialDesign:ShadowAssist.ShadowDepth="Depth3" Margin="61,58,70,0" Fill="#FF3C4049"/>
+                            <Rectangle RadiusX="40" RadiusY="40" Height="71" materialDesign:ShadowAssist.ShadowDepth="Depth3" Margin="117,66,122,0" Fill="#FF282828"/>
                             <!--RADIO PLAYER TEXT BLOCK-->
                             <MediaElement x:Name="Player" LoadedBehavior="Manual" Height="0" VerticalAlignment="Top" Width="0"/>
-                            <TextBlock Text="Radio Channel" Style="{StaticResource MaterialDesignButtonTextBlock}" FontSize="20" Margin="70,20,70,0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120" Height="20" FontFamily="Candara" FontWeight="Normal" Foreground="#DDFFFFFF"/>
+                            <TextBlock x:Name="RadioStation" 
+                                       Text="                ..." 
+                                       Style="{StaticResource MaterialDesignButtonTextBlock}" 
+                                       FontSize="20" Margin="103,20,104,0" HorizontalAlignment="Center" 
+                                       VerticalAlignment="Center" Width="153" Height="20" FontFamily="Candara" 
+                                       FontWeight="Normal" Foreground="#DDFFFFFF"/>
                         </StackPanel>
                         <StackPanel Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Right" VerticalAlignment="Stretch">
                             <!--VOLUME SLIDER-->
                             <Slider x:Name="volumeSlider" Orientation="Vertical"
                             Height="140"
                             Style="{StaticResource MaterialDesignSlider}"
-                            Maximum="100" Minimum="0" Value="50"
+                            Maximum="50" Minimum="0" Value="25"
                             IsSnapToTickEnabled="True"
                             TickFrequency="1"
-                            Margin="0,0,7,0" HorizontalAlignment="Right" Cursor="Hand"/>
+                            Margin="0,0,7,0" HorizontalAlignment="Right" Cursor="Hand" />
                         </StackPanel>
                         <materialDesign:PackIcon Kind="Audio" Width="18" Height="18" Margin="370,147,0,0" HorizontalAlignment="Left" Grid.Row="1" Foreground="#DDFFFFFF"/>
-                        <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Center">
+                        <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Center" Margin="62,53,70,42" Width="263">
                             <!--RADIO CONTROLLER-->
-                            <!--STOP BUTTON-->
-                            <Button x:Name="StopButton" 
-                            Margin="0,27" 
-                            Cursor="Hand" 
-                            Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}"
-                            HorizontalAlignment="Left" VerticalAlignment="Center"
-                            Click="StopButton_Click" Height="75" Width="60">
-                                <materialDesign:PackIcon Kind="Stop" Width="65" Height="65" Foreground="#DDFFFFFF" Cursor="Hand" Margin="-22,0,-11,0"/>
-                            </Button>
                             <!--PLAY BUTTON-->
                             <Button x:Name="PlayButton"
-                            Margin="0,0,0,0"
+                            Margin="68,20,-5.3,20"
+                            Cursor="Hand" 
+                            Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" VerticalAlignment="Center"
+                            Click="PlayButton_Click" Height="50" Width="50" HorizontalAlignment="Center">
+                                <materialDesign:PackIcon Kind="PlayCircleFilled" Width="50" Height="50" Foreground="#DDFFFFFF" Cursor="Hand" Margin="-16,-4,-15,0"/>
+                            </Button>
+                            <!--STOP BUTTON-->
+                            <Button x:Name="StopButton" 
+                            Margin="38,23,0,23" 
                             Cursor="Hand" 
                             Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}"
-                            HorizontalAlignment="Center" VerticalAlignment="Center"
-                            Click="PlayButton_Click" Height="60" Width="78">
-                                <materialDesign:PackIcon Kind="PlayCircleFilled" Width="50" Height="50" Foreground="#DDFFFFFF" Cursor="Hand"/>
+                            Click="StopButton_Click" Height="50" Width="50" VerticalAlignment="Center">
+                                <materialDesign:PackIcon Kind="StopCircle" Width="50" Height="50" Foreground="#DDFFFFFF" Cursor="Hand" Margin="-16,-4,-13,0"/>
                             </Button>
                         </StackPanel>
                         <!--VOLUME SLIDER VALUES-->
-                        <TextBox x:Name="VolumeValue" 
-                            Text="{Binding Value, ElementName=volumeSlider}" 
-                            Margin="366,20,3,0" 
-                            CaretBrush="{x:Null}" 
-                            SelectionBrush="{x:Null}" 
-                            FontSize="15"
-                            FontFamily="Ebrima" FontWeight="Normal" Foreground="#DDFFFFFF"
-                            TextDecorations="{x:Null}" HorizontalAlignment="Center" VerticalAlignment="Top" Height="27" Width="25"/>
+                        <Grid Margin="370,23,0,0">
+                            <TextBox x:Name="VolumeValue" 
+                                Text="{Binding Value, ElementName=volumeSlider}" 
+                                Margin="0" 
+                                CaretBrush="{x:Null}" 
+                                SelectionBrush="{x:Null}" 
+                                FontSize="15"
+                                FontFamily="Ebrima" FontWeight="Normal" Foreground="#DDFFFFFF"
+                                TextDecorations="{x:Null}" HorizontalAlignment="Center" VerticalAlignment="Top" Height="27" Width="24"/>
+                        </Grid>
                     </Grid>
                 </materialDesign:Card>
             </materialDesign:TransitioningContent>
             <!--CHANNEL WINDOW-->
-            <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect Duration=0:0:1, Kind=SlideInFromRight}">
+            <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect Duration=0:0:1, Kind=SlideInFromRight}" Margin="0">
                 <materialDesign:Card UniformCornerRadius="10" Width="300" Margin="530,110,70,60" Height="400">
                     <Grid Margin="5">
                         <Grid.RowDefinitions>
