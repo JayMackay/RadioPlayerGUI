@@ -82,24 +82,49 @@
                         <RowDefinition Height="4*"/>
                         <RowDefinition Height="2*"/>
                     </Grid.RowDefinitions>
-                    <materialDesign:PackIcon Grid.Row="0" Kind="Power" Height="40" Width="37" Foreground="#DDFFFFFF" Margin="0,2,0,0"/>
+                    <!--POWER BUTTON-->
+                    <materialDesign:PackIcon Grid.Row="0" Kind="Power" Height="40" Width="37" Foreground="#DDFFFFFF" Margin="0,2,0,0" Cursor="Hand"/>
                     <StackPanel Grid.Row="1" Orientation="Vertical">
                         <Ellipse Height="130" Width="130" Fill="#FFDED976" materialDesign:ShadowAssist.ShadowDepth="Depth3" Margin="125,0"/>
+                        <!--RADIO PLAYER TEXT BLOCK-->
                         <TextBlock Text="Radio Channel" FontSize="20" Margin="10,20,10,0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="130" Height="20"/>
                     </StackPanel>
                     <StackPanel Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Right" VerticalAlignment="Stretch">
+                        <!--VOLUME SLIDER-->
                         <Slider Orientation="Vertical"
                                 Height="140"
                                 Style="{StaticResource MaterialDesignSlider}"
-                                Maximum="100" Minimum="0" Value="50" Margin="0,0,7,0" HorizontalAlignment="Right"/>
+                                Maximum="100" Minimum="0" Value="50" Margin="0,0,7,0" HorizontalAlignment="Right" Cursor="Hand"/>
                     </StackPanel>
                     <materialDesign:PackIcon Kind="Audio" Width="18" Height="18" Margin="370,147,0,0" HorizontalAlignment="Left" Grid.Row="1" Foreground="#DDFFFFFF"/>
                     <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Center">
-                        <materialDesign:PackIcon Kind="SkipPrevious" Width="36" Height="36" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="#DDFFFFFF"/>
-                        <materialDesign:PackIcon Kind="PlayCircleFilled" Width="56" Height="56" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="15,0" Foreground="#DDFFFFFF"/>
-                        <materialDesign:PackIcon Kind="SkipNext" Width="36" Height="36" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="#DDFFFFFF"/>
+                        <!--RADIO CONTROLLER-->
+                        <materialDesign:PackIcon Kind="SkipPrevious" Width="36" Height="36" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="#DDFFFFFF" Cursor="Hand"/>
+                        <materialDesign:PackIcon Width="56" Height="56" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="15,0" Foreground="#DDFFFFFF" Cursor="Hand">
+                            <materialDesign:PackIcon.Style>
+                                <Style TargetType="materialDesign:PackIcon">
+                                    <Setter Property="Kind" Value="PlayCircleFilled"></Setter>
+                                    <!--PLAY BUTTON CONTROLLER-->
+                                    <Style.Triggers>
+                                        <EventTrigger RoutedEvent="MouseDown">
+                                            
+                                        </EventTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </materialDesign:PackIcon.Style>
+                        </materialDesign:PackIcon>
+                        <materialDesign:PackIcon Kind="SkipNext" Width="36" Height="36" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="#DDFFFFFF" Cursor="Hand"/>
                     </StackPanel>
                 </Grid>
+            </materialDesign:Card>
+            <!--CHANNEL WINDOW-->
+            <materialDesign:Card UniformCornerRadius="10" Width="300" Margin="530,110,70,60" Height="400">
+                <StackPanel Orientation="Vertical" Margin="5">
+                    <TextBlock Text="Current Channel" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <ScrollViewer VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+
+                    </ScrollViewer>
+                </StackPanel>
             </materialDesign:Card>
         </Grid>
     </materialDesign:Card>
