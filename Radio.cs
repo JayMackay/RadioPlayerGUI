@@ -14,7 +14,7 @@ namespace RadioApplication
         //FIELDS
         private int _channel = 1;
         private bool _on = false;
-        private int _volume = 0;
+        private double _volume = 50;
 
         //CHANNEL PROPERTY
         public int Channel
@@ -34,12 +34,12 @@ namespace RadioApplication
         }
 
         //VOLUME PROPERTY
-        public int Volume
+        public double Volume
         {
             get { return _volume; }
             set
             {
-                if (value >= 0 && value <= 30 && _on == true)
+                if (value >= 0 && value <= 100 && _on == true)
                 {
                     _volume = value;
                 }
@@ -78,7 +78,7 @@ namespace RadioApplication
         }
 
         //VOLUME CONTROL
-        public int volumeControl()
+        public double volumeControl()
         {
             return _volume;
         }

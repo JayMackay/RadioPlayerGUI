@@ -27,10 +27,10 @@ namespace RadioApplication
         public MainWindow()
         {
             InitializeComponent();
-            CurrentChannel.Add(new ChannelModel() { Brush = Brushes.Gray, ChannelName = "Channel One" });
-            CurrentChannel.Add(new ChannelModel() { Brush = Brushes.CornflowerBlue, ChannelName = "Channel Two" });
-            CurrentChannel.Add(new ChannelModel() { Brush = Brushes.CadetBlue, ChannelName = "Channel Three" });
-            CurrentChannel.Add(new ChannelModel() { Brush = Brushes.LightBlue, ChannelName = "Channel Four" });
+            CurrentChannel.Add(new ChannelModel() { Brush = Brushes.Gray, ChannelName = "Channel 1" });
+            CurrentChannel.Add(new ChannelModel() { Brush = Brushes.CornflowerBlue, ChannelName = "Channel 2" });
+            CurrentChannel.Add(new ChannelModel() { Brush = Brushes.CadetBlue, ChannelName = "Channel 3" });
+            CurrentChannel.Add(new ChannelModel() { Brush = Brushes.LightBlue, ChannelName = "Channel 4" });
         }
 
         //CHANNEL COLLECTION
@@ -55,26 +55,45 @@ namespace RadioApplication
             }
         }
 
-        //CHANNEL ONE (BBC RADIO ONE)
+        //RADIO PLAYER FUNCTIONALITY
         private void PlayButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void StopButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        //CHANELL BUTTON FUNCTIONALITY
+
+        //BBC Radio One
+        private void ChannelOne_Click(object sender, RoutedEventArgs e)
         {
             Player.Source = new Uri("http://bbcmedia.ic.llnwd.net/stream/bbcmedia_radio1_mf_p", UriKind.RelativeOrAbsolute);
             Player.Play();
         }
 
-        private void PowerButton_Click(object sender, RoutedEventArgs e)
+        //BBC Radio Two
+        private void ChannelTwo_Click(object sender, RoutedEventArgs e)
         {
-
+            Player.Source = new Uri("http://bbcmedia.ic.llnwd.net/stream/bbcmedia_radio2_mf_p", UriKind.RelativeOrAbsolute);
+            Player.Play();
         }
 
-        private void SkipPrevious_Click(object sender, RoutedEventArgs e)
+        //BBC Radio Three
+        private void ChannelThree_Click(object sender, RoutedEventArgs e)
         {
-
+            Player.Source = new Uri("http://bbcmedia.ic.llnwd.net/stream/bbcmedia_radio3_mf_p", UriKind.RelativeOrAbsolute);
+            Player.Play();
         }
 
-        private void SkipNext_Click(object sender, RoutedEventArgs e)
+        //BBC Radio Four    
+        private void ChannelFour_Click(object sender, RoutedEventArgs e)
         {
-
+            Player.Source = new Uri("http://bbcmedia.ic.llnwd.net/stream/bbcmedia_radio4fm_mf_p", UriKind.RelativeOrAbsolute);
+            Player.Play();
         }
     }
 }
