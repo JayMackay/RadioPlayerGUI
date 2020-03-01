@@ -16,159 +16,173 @@
         FontFamily="{DynamicResource MaterialDesignFont}" ResizeMode="NoResize" AllowsTransparency="True" WindowStyle="None">
     <materialDesign:Card VerticalAlignment="Stretch" UniformCornerRadius="15">
         <Grid Height="550">
-            <!---->
+            <!--RADIO PLAYER DESIGN ACCENTS-->
             <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect Kind=SlideInFromTop, Duration=0:0:2}">
                 <materialDesign:Card UniformCornerRadius="10" Margin="64,-12,371,312" RenderTransformOrigin="0.5,0.5" Height="250" Width="465">
-                <materialDesign:Card.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform/>
-                        <RotateTransform Angle="-8.704"/>
-                        <TranslateTransform/>
-                    </TransformGroup>
-                </materialDesign:Card.RenderTransform>
-                <materialDesign:Card.Background>
-                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="#FFC9D132"/>
-                        <GradientStop Color="#FFD48614" Offset="1"/>
-                        <GradientStop Color="#FFD8CA6E"/>
-                    </LinearGradientBrush>
-                </materialDesign:Card.Background>
+                    <materialDesign:Card.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="-8.704"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </materialDesign:Card.RenderTransform>
+                    <materialDesign:Card.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FFC9D132"/>
+                            <GradientStop Color="#FFD48614" Offset="1"/>
+                            <GradientStop Color="#FFD8CA6E"/>
+                        </LinearGradientBrush>
+                    </materialDesign:Card.Background>
 
-            </materialDesign:Card>
+                </materialDesign:Card>
             </materialDesign:TransitioningContent>
             <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect Kind=SlideInFromRight, Duration=0:0:2}">
                 <materialDesign:Card UniformCornerRadius="10" Margin="404,-30,30,330" RenderTransformOrigin="0.5,0.5" Width="465" Height="250">
-                <materialDesign:Card.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform/>
-                        <RotateTransform Angle="13.21"/>
-                        <TranslateTransform/>
-                    </TransformGroup>
-                </materialDesign:Card.RenderTransform>
-                <materialDesign:Card.Background>
-                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="#FFC9D132" Offset="0.095"/>
-                        <GradientStop Color="#FF2B8F2B" Offset="0.652"/>
-                        <GradientStop Color="#FFE6CA17" Offset="0.25"/>
-                    </LinearGradientBrush>
-                </materialDesign:Card.Background>
+                    <materialDesign:Card.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="13.21"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </materialDesign:Card.RenderTransform>
+                    <materialDesign:Card.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FFC9D132" Offset="0.095"/>
+                            <GradientStop Color="#FF2B8F2B" Offset="0.652"/>
+                            <GradientStop Color="#FFE6CA17" Offset="0.25"/>
+                        </LinearGradientBrush>
+                    </materialDesign:Card.Background>
 
-            </materialDesign:Card>
+                </materialDesign:Card>
             </materialDesign:TransitioningContent>
-            <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect Kind=ExpandIn, Duration=0:0:2}">
+            <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect Kind=ExpandIn, Duration=0:0:1}">
                 <!--PLAYER WINDOW-->
                 <materialDesign:Card UniformCornerRadius="10" Height="350" Width="415" Margin="93,120,392,80" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center" VerticalAlignment="Center">
-                <materialDesign:Card.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform/>
-                        <RotateTransform Angle="-0.147"/>
-                        <TranslateTransform/>
-                    </TransformGroup>
-                </materialDesign:Card.RenderTransform>
-                <materialDesign:Card.Background>
-                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <LinearGradientBrush.RelativeTransform>
-                            <TransformGroup>
-                                <ScaleTransform CenterY="0.5" CenterX="0.5"/>
-                                <SkewTransform CenterY="0.5" CenterX="0.5"/>
-                                <RotateTransform Angle="-40" CenterY="0.5" CenterX="0.5"/>
-                                <TranslateTransform/>
-                            </TransformGroup>
-                        </LinearGradientBrush.RelativeTransform>
-                        <GradientStop Color="#FF9849AA" Offset="0"/>
-                        <GradientStop Color="#FFCB1717" Offset="1"/>
-                    </LinearGradientBrush>
-                </materialDesign:Card.Background>
-                <Grid Margin="10">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="4*"/>
-                        <RowDefinition Height="2*"/>
-                    </Grid.RowDefinitions>
-                    <!--POWER BUTTON-->
-                    <Button Name="PoweButton" 
+                    <materialDesign:Card.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="-0.147"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </materialDesign:Card.RenderTransform>
+                    <materialDesign:Card.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <LinearGradientBrush.RelativeTransform>
+                                <TransformGroup>
+                                    <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                                    <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                                    <RotateTransform Angle="-40" CenterY="0.5" CenterX="0.5"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </LinearGradientBrush.RelativeTransform>
+                            <GradientStop Color="#FF9849AA" Offset="0"/>
+                            <GradientStop Color="#FFCB1717" Offset="1"/>
+                        </LinearGradientBrush>
+                    </materialDesign:Card.Background>
+                    <Grid Margin="10">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="4*"/>
+                            <RowDefinition Height="2*"/>
+                        </Grid.RowDefinitions>
+                        <!--POWER BUTTON-->
+                        <Button Name="PoweButton" 
                         Margin="0,-7,0,19" 
                         Cursor="Hand" 
                         Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}"
                         HorizontalAlignment="Left" VerticalAlignment="Stretch"
                         Height="Auto" Width="43"
                         Click="PowerButton_Click">
-                        <materialDesign:PackIcon Kind="Power" Height="30" Width="30" Foreground="#DDFFFFFF" Cursor="Hand" Margin="-22,0,0,0"/>
-                    </Button>
-                    <StackPanel Grid.Row="1" Orientation="Vertical">
-                        <Ellipse Height="130" Width="130" Fill="#FFDED976" materialDesign:ShadowAssist.ShadowDepth="Depth3" Margin="125,0"/>
-                        <!--RADIO PLAYER TEXT BLOCK-->
-                        <MediaElement Name="Player" LoadedBehavior="Manual" Height="0" VerticalAlignment="Top" Width="0"/>
-                        <TextBlock Text="Radio Channel" Style="{StaticResource MaterialDesignButtonTextBlock}" FontSize="20" Margin="70,20,70,0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120" Height="20" FontFamily="Candara" FontWeight="Normal" Foreground="#DDFFFFFF"/>
-                    </StackPanel>
-                    <StackPanel Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Right" VerticalAlignment="Stretch">
-                        <!--VOLUME SLIDER-->
-                        <Slider Orientation="Vertical"
+                            <materialDesign:PackIcon Kind="Power" Height="30" Width="30" Foreground="#DDFFFFFF" Cursor="Hand" Margin="-22,0,0,0"/>
+                        </Button>
+                        <StackPanel Grid.Row="1" Orientation="Vertical">
+                            <Ellipse Height="130" Width="130" Fill="#FFDED976" materialDesign:ShadowAssist.ShadowDepth="Depth3" Margin="125,0"/>
+                            <!--RADIO PLAYER TEXT BLOCK-->
+                            <MediaElement Name="Player" LoadedBehavior="Manual" Height="0" VerticalAlignment="Top" Width="0"/>
+                            <TextBlock Text="Radio Channel" Style="{StaticResource MaterialDesignButtonTextBlock}" FontSize="20" Margin="70,20,70,0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120" Height="20" FontFamily="Candara" FontWeight="Normal" Foreground="#DDFFFFFF"/>
+                        </StackPanel>
+                        <StackPanel Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Right" VerticalAlignment="Stretch">
+                            <!--VOLUME SLIDER-->
+                            <Slider Orientation="Vertical"
                             Height="140"
                             Style="{StaticResource MaterialDesignSlider}"
                             Maximum="100" Minimum="0" Value="50" Margin="0,0,7,0" HorizontalAlignment="Right" Cursor="Hand"/>
-                    </StackPanel>
-                    <materialDesign:PackIcon Kind="Audio" Width="18" Height="18" Margin="370,147,0,0" HorizontalAlignment="Left" Grid.Row="1" Foreground="#DDFFFFFF"/>
-                    <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Center">
-                        <!--RADIO CONTROLLER-->
-                        <!--SKIP PREVIOUS BUTTON-->
-                        <Button Name="SkipPrevious" 
+                        </StackPanel>
+                        <materialDesign:PackIcon Kind="Audio" Width="18" Height="18" Margin="370,147,0,0" HorizontalAlignment="Left" Grid.Row="1" Foreground="#DDFFFFFF"/>
+                        <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Center">
+                            <!--RADIO CONTROLLER-->
+                            <!--SKIP PREVIOUS BUTTON-->
+                            <Button Name="SkipPrevious" 
                             Margin="0,27" 
                             Cursor="Hand" 
                             Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}"
                             HorizontalAlignment="Left" VerticalAlignment="Center"
                             Click="SkipPrevious_Click" Height="40" Width="40">
-                            <materialDesign:PackIcon Kind="SkipPrevious" Width="36" Height="36" Foreground="#DDFFFFFF" Cursor="Hand" Margin="-22,0,-11,0"/>
-                        </Button>
-                        <!--PLAY BUTTON-->
-                        <Button Name="PlayButton"
+                                <materialDesign:PackIcon Kind="SkipPrevious" Width="36" Height="36" Foreground="#DDFFFFFF" Cursor="Hand" Margin="-22,0,-11,0"/>
+                            </Button>
+                            <!--PLAY BUTTON-->
+                            <Button Name="PlayButton"
                             Margin="0,0,0,0"
                             Cursor="Hand" 
                             Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}"
                             HorizontalAlignment="Center" VerticalAlignment="Center"
                             Click="PlayButton_Click" Height="75" Width="80">
-                            <materialDesign:PackIcon Kind="PlayCircleFilled" Width="50" Height="50" Foreground="#DDFFFFFF" Cursor="Hand"/>
-                        </Button>
-                        <!--SKIP NEXT BUTTON-->
-                        <Button Name="SkipNext"
+                                <materialDesign:PackIcon Kind="PlayCircleFilled" Width="50" Height="50" Foreground="#DDFFFFFF" Cursor="Hand"/>
+                            </Button>
+                            <!--SKIP NEXT BUTTON-->
+                            <Button Name="SkipNext"
                             Margin="0,0,0,0"
                             Cursor="Hand" 
                             Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}"
                             HorizontalAlignment="Left" VerticalAlignment="Center"
                             Click="SkipNext_Click" Height="40" Width="40">
-                            <materialDesign:PackIcon Kind="SkipNext" Width="36" Height="36" Foreground="#DDFFFFFF" Cursor="Hand" Margin="-11,0,-22,0"/>
-                        </Button>
-                    </StackPanel>
-                </Grid>
-            </materialDesign:Card>
+                                <materialDesign:PackIcon Kind="SkipNext" Width="36" Height="36" Foreground="#DDFFFFFF" Cursor="Hand" Margin="-11,0,-22,0"/>
+                            </Button>
+                        </StackPanel>
+                    </Grid>
+                </materialDesign:Card>
             </materialDesign:TransitioningContent>
-            <!--CHANNEL WINDOW-->
-            <materialDesign:Card UniformCornerRadius="10" Width="300" Margin="530,110,70,60" Height="400">
-                <StackPanel Orientation="Vertical" Margin="5">
-                    <TextBlock Text="Current Channel" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Candara Light"/>
-                    <ScrollViewer VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
-                        <!--CHANNEL CONTROLLER-->
-                        <ItemsControl ItemsSource="{Binding CurrentChannel, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
-                            <ItemsControl.ItemTemplate>
-                                <DataTemplate>
-                                    <StackPanel Orientation="Horizontal" Margin="10">
-                                        <Ellipse Fill="{Binding Brush}"
-                                            Width ="50" Height="50">
-                                        </Ellipse>
-                                        <TextBlock Text="{Binding ChannelName}" VerticalAlignment="Center" Margin="10"></TextBlock>
-                                    </StackPanel>
-                                </DataTemplate>
-                            </ItemsControl.ItemTemplate>
-                        </ItemsControl>
-                    </ScrollViewer>
-                </StackPanel>
-            </materialDesign:Card>
+            <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect Kind=SlideInFromRight, Duration=0:0:1}">
+                <!--CHANNEL WINDOW-->
+                <materialDesign:Card UniformCornerRadius="10" Width="300" Margin="530,110,70,60" Height="400">
+                    <StackPanel Orientation="Vertical" Margin="5">
+                        <TextBlock Text="Channels" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Candara Light" Margin="0,5,0,0"/>
+                        <ScrollViewer VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+                            <!--CHANNEL CONTROLLER-->
+                            <ItemsControl ItemsSource="{Binding CurrentChannel, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <DockPanel>
+                                            <StackPanel DockPanel.Dock="Left" Orientation="Horizontal" Margin="10">
+                                                <Ellipse Fill="{Binding Brush}"
+                                                    Width ="50" Height="50">
+                                                </Ellipse>
+                                                <TextBlock Text="{Binding ChannelName}" VerticalAlignment="Center" Margin="10"></TextBlock>
+                                            </StackPanel>
+                                                <!--CHANNEL PLAY ICONS-->
+                                            <materialDesign:PackIcon Kind="PlayCircleOutline" 
+                                                    HorizontalAlignment="Center" 
+                                                    VerticalAlignment="Center" 
+                                                    DockPanel.Dock="Right"
+                                                    Width="30" Height="30"
+                                                    Cursor="Hand">
+                                            </materialDesign:PackIcon>
+                                        </DockPanel>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                        </ScrollViewer>
+                    </StackPanel>
+                </materialDesign:Card>
+            </materialDesign:TransitioningContent>
+            <!--CHANNEL BUTTONS-->
+            <Button Name="ChannelOne" HorizontalAlignment="Left" Margin="745,164,0,0" VerticalAlignment="Top" Width="33" Background="{x:Null}" BorderBrush="{x:Null}" Click="ChannelOne_Click"/>
+            <Button Name="ChannelTwo" HorizontalAlignment="Left" Margin="745,237,0,0" VerticalAlignment="Top" Width="33" Background="{x:Null}" BorderBrush="{x:Null}" Click="ChannelTwo_Click"/>
+            <Button Name="ChannelThree" HorizontalAlignment="Left" Margin="745,307,0,0" VerticalAlignment="Top" Width="33" Background="{x:Null}" BorderBrush="{x:Null}" Click="ChannelThree_Click"/>
+            <Button Name="ChannelFour" HorizontalAlignment="Left" Margin="745,376,0,0" VerticalAlignment="Top" Width="33" Background="{x:Null}" BorderBrush="{x:Null}" Click="ChannelFour_Click"/>
         </Grid>
     </materialDesign:Card>
-</Window>
-
-    
-    
+</Window>    
