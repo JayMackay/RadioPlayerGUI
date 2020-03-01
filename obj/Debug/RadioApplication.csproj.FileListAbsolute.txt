@@ -19,3 +19,5 @@ C:\Users\Jarvis\Desktop\RadioApplication\obj\Debug\RadioApplication.csproj.Gener
 C:\Users\Jarvis\Desktop\RadioApplication\obj\Debug\RadioApplication.csproj.CopyComplete
 C:\Users\Jarvis\Desktop\RadioApplication\obj\Debug\RadioApplication.exe
 C:\Users\Jarvis\Desktop\RadioApplication\obj\Debug\RadioApplication.pdb
+C:\Users\Jarvis\Desktop\RadioApplication\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Jarvis\Desktop\RadioApplication\bin\Debug\Newtonsoft.Json.xml
