@@ -126,32 +126,33 @@
                             Width="331" 
                             CaretBrush="{x:Null}" SelectionBrush="{x:Null}"/>
                         <StackPanel Grid.Row="1" Orientation="Vertical">
-                            <Rectangle RadiusX="40" RadiusY="40" Height="71" materialDesign:ShadowAssist.ShadowDepth="Depth3" Margin="117,66,122,0" Fill="#FF282828"/>
+                            <Rectangle RadiusX="20" RadiusY="40" Height="50" materialDesign:ShadowAssist.ShadowDepth="Depth3" Margin="-30,85,120,-15" Fill="#FF282828" Width="110"/>
                             <!--RADIO PLAYER TEXT BLOCK-->
                             <MediaElement x:Name="Player" LoadedBehavior="Manual" Height="0" VerticalAlignment="Top" Width="0"/>
                             <TextBlock x:Name="RadioStation" 
-                                       Text="                ..." 
+                                       Text="FM Radio" 
                                        Style="{StaticResource MaterialDesignButtonTextBlock}" 
-                                       FontSize="20" Margin="103,20,104,0" HorizontalAlignment="Center" 
-                                       VerticalAlignment="Center" Width="153" Height="20" FontFamily="Candara" 
+                                       FontSize="20" Margin="186,-20,36,0" HorizontalAlignment="Center" 
+                                       VerticalAlignment="Center" Width="167" Height="20" FontFamily="Candara" 
                                        FontWeight="Normal" Foreground="#DDFFFFFF"/>
                         </StackPanel>
                         <StackPanel Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Right" VerticalAlignment="Stretch">
                             <!--VOLUME SLIDER-->
                             <Slider x:Name="volumeSlider" Orientation="Vertical"
-                            Height="140"
+                            Height="125"
                             Style="{StaticResource MaterialDesignSlider}"
                             Maximum="50" Minimum="0" Value="25"
                             IsSnapToTickEnabled="True"
                             TickFrequency="1"
-                            Margin="0,0,7,0" HorizontalAlignment="Right" Cursor="Hand" />
+                            ValueChanged="VolumeSlider_ValueChanged"
+                            Margin="0,43,7,0" HorizontalAlignment="Right" Cursor="Hand" />
                         </StackPanel>
-                        <materialDesign:PackIcon Kind="Audio" Width="18" Height="18" Margin="370,147,0,0" HorizontalAlignment="Left" Grid.Row="1" Foreground="#DDFFFFFF"/>
-                        <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Center" Margin="62,53,70,42" Width="263">
+                        <materialDesign:PackIcon Kind="Audio" Width="18" Height="18" Margin="370,171,0,0" HorizontalAlignment="Left" Grid.Row="1" Foreground="#DDFFFFFF"/>
+                        <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Center" Margin="62,53.6,70,42" Width="263">
                             <!--RADIO CONTROLLER-->
                             <!--PLAY BUTTON-->
                             <Button x:Name="PlayButton"
-                            Margin="68,20,-5.3,20"
+                            Margin="10,27,-5.3,10"
                             Cursor="Hand" 
                             Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" VerticalAlignment="Center"
                             Click="PlayButton_Click" Height="50" Width="50" HorizontalAlignment="Center">
@@ -159,7 +160,7 @@
                             </Button>
                             <!--STOP BUTTON-->
                             <Button x:Name="StopButton" 
-                            Margin="38,23,0,23" 
+                            Margin="9,25,0,7" 
                             Cursor="Hand" 
                             Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}"
                             Click="StopButton_Click" Height="50" Width="50" VerticalAlignment="Center">
@@ -167,21 +168,21 @@
                             </Button>
                         </StackPanel>
                         <!--VOLUME SLIDER VALUES-->
-                        <Grid Margin="370,23,0,0">
+                        <Grid Margin="370,17,-5,149" Height="30" Width="30" Grid.Row="1">
                             <TextBox x:Name="VolumeValue" 
                                 Text="{Binding Value, ElementName=volumeSlider}" 
-                                Margin="0" 
+                                Margin="0,0,0,3" 
                                 CaretBrush="{x:Null}" 
                                 SelectionBrush="{x:Null}" 
                                 FontSize="15"
                                 FontFamily="Ebrima" FontWeight="Normal" Foreground="#DDFFFFFF"
-                                TextDecorations="{x:Null}" HorizontalAlignment="Center" VerticalAlignment="Top" Height="27" Width="24"/>
+                                TextDecorations="{x:Null}" HorizontalAlignment="Center" VerticalAlignment="Top" Height="30" Width="30"/>
                         </Grid>
                     </Grid>
                 </materialDesign:Card>
             </materialDesign:TransitioningContent>
             <!--CHANNEL WINDOW-->
-            <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect Duration=0:0:1, Kind=SlideInFromRight}" Margin="0">
+            <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect Duration=0:0:1, Kind=SlideInFromRight}">
                 <materialDesign:Card UniformCornerRadius="10" Width="300" Margin="530,110,70,60" Height="400">
                     <Grid Margin="5">
                         <Grid.RowDefinitions>
@@ -221,6 +222,17 @@
             <Button x:Name="ChannelTwo" HorizontalAlignment="Left" Margin="690,263,0,0" VerticalAlignment="Top" Width="33" Background="{x:Null}" BorderBrush="{x:Null}" Click="ChannelTwo_Click"/>
             <Button x:Name="ChannelThree" HorizontalAlignment="Left" Margin="690,349,0,0" VerticalAlignment="Top" Width="33" Background="{x:Null}" BorderBrush="{x:Null}" Click="ChannelThree_Click"/>
             <Button x:Name="ChannelFour" HorizontalAlignment="Left" Margin="690,435,0,0" VerticalAlignment="Top" Width="33" Background="{x:Null}" BorderBrush="{x:Null}" Click="ChannelFour_Click"/>
+            <!--MUTE BUTTON-->
+            <Button x:Name="MuteButton"
+                Click="MuteButton_Click"
+                HorizontalAlignment="Left" 
+                Margin="70.8,442,0,0"
+                Cursor="Hand" 
+                Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}"
+                VerticalAlignment="Top" Width="30" Height="30">
+                <materialDesign:PackIcon Kind="Mute" Width="30" Height="30" Foreground="#DDFFFFFF" Cursor="Hand" Margin="-15,-4,-15,0"/>
+            </Button>
         </Grid>
     </materialDesign:Card>
-</Window>    
+</Window>
+

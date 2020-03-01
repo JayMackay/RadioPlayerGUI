@@ -1,15 +1,11 @@
 ﻿using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RadioApplication
 {
     [Serializable]
-    class Radio
+    public class Radio
     {
         //FIELDS
         private int _channel = 1;
@@ -30,11 +26,11 @@ namespace RadioApplication
             }
         }
 
-        //RADIO ON PROPERTY
+        //POWER PROPERTY
         public bool on
         {
             get { return _on; }
-            set { on = _on; }
+            set { _on = value; }
         }
 
         //POWER ON METHOD
@@ -68,27 +64,14 @@ namespace RadioApplication
         public int readChannel
         {
             get { return _channel; }
-            set
-            {
-                if(value <= 4 && value > 0)
-                {
-                    _channel = value;
-                }
-
-            }
+            set { _channel = value; }
         }
 
         //READ VOLUME METHOD FOR SERIALIZATION
         public double readVolume
         {
             get { return _volume; }
-            set
-            {
-                if(value >= 0 && value <= 50)
-                {
-                    _volume = value;
-                }
-            }
+            set { _volume = value; }
         }
 
         //PLAY METHOD

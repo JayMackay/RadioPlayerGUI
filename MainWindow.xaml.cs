@@ -1,20 +1,8 @@
-﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace RadioApplication
 {
@@ -27,6 +15,7 @@ namespace RadioApplication
         public MainWindow()
         {
             InitializeComponent();
+            radio.Read(); //Deserialize
             CurrentChannel.Add(new ChannelModel() { Brush = Brushes.Gray, ChannelName = "Channel 1" });
             CurrentChannel.Add(new ChannelModel() { Brush = Brushes.CornflowerBlue, ChannelName = "Channel 2" });
             CurrentChannel.Add(new ChannelModel() { Brush = Brushes.CadetBlue, ChannelName = "Channel 3" });
@@ -62,7 +51,6 @@ namespace RadioApplication
         {
             radio.PowerOn();
             RadioState.Text = $"{radio.PowerOn()}";
-            radio.Read();
         }
 
         //POWER OFF
@@ -74,6 +62,8 @@ namespace RadioApplication
             radio.Write(); //SERIALIZE
         }
 
+
+        //PLAY RADIO BUTTON
         private void PlayButton_Click(object sender, RoutedEventArgs e)
         {
             radio.Play();
@@ -87,13 +77,26 @@ namespace RadioApplication
 
         }
 
+        //STOP RADIO BUTTON
         private void StopButton_Click(object sender, RoutedEventArgs e)
         {
             Player.Stop();
             RadioState.Text = $"{radio.Stop()}";
         }
 
-        //CHANELL BUTTON FUNCTIONALITY
+        //VOLUME SLIDER FUNCTIONALITY
+        private void VolumeSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            Player.Volume = volumeSlider.Value;
+            radio.Volume = volumeSlider.Value;
+        }
+
+        private void MuteButton_Click(object sender, RoutedEventArgs e)
+        {
+            Player.IsMuted = !Player.IsMuted;
+        }
+
+        //======================CHANNEL BUTTON FUNCTIONALITY======================
 
         //BBC Radio One
         private void ChannelOne_Click(object sender, RoutedEventArgs e)
